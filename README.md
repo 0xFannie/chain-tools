@@ -42,7 +42,7 @@ Chain Tools 是一个精心策划的区块链工具集合平台，旨在为 Web3
 - ✅ 经过 14 个单元测试验证
 
 **使用场景：**
-- 🏢 公司资金管理 - 多个合伙人共同管理
+- 🏢 公司资金管理 - 多个合伙人共同管理；业务流程中的资金流节点确认（例如在线订购-跨境物流-确认收货场景）
 - 🏛️ DAO 金库管理 - 理事会成员投票决策
 - 👨‍👩‍👧‍👦 家庭资产管理 - 夫妻双方共同确认
 - 🤝 项目资金托管 - 投资人和创始人双重保障
@@ -56,9 +56,9 @@ Chain Tools 是一个精心策划的区块链工具集合平台，旨在为 Web3
 
 ---
 
-### 2. 更多工具开发中... ⏳
+### 2. 更多工具开发或集成中... ⏳
 
-我们正在开发更多实用的区块链工具，敬请期待！
+我们正在开发或者集成更多实用的区块链工具，敬请期待！
 
 **计划中的工具：**
 - 💸 Token Batch Sender - 批量发送代币工具
@@ -73,10 +73,6 @@ Chain Tools 是一个精心策划的区块链工具集合平台，旨在为 Web3
 
 ## 🚀 快速开始
 
-### 本地预览
-
-这是一个简单的静态网站，可以直接在浏览器中打开：
-
 ```bash
 # 克隆仓库
 git clone https://github.com/0xFannie/chain-tools.git
@@ -84,130 +80,7 @@ git clone https://github.com/0xFannie/chain-tools.git
 # 进入目录
 cd chain-tools
 
-# 方式 1: 直接在浏览器中打开
-# 打开 index.html 文件
-
-# 方式 2: 使用 Python HTTP 服务器
-python -m http.server 8000
-
-# 方式 3: 使用 Node.js HTTP 服务器
-npx http-server
-
-# 方式 4: 使用 VS Code Live Server 扩展
-# 右键 index.html → "Open with Live Server"
-```
-
-访问 `http://localhost:8000`
-
----
-
-## 📦 部署指南
-
-### Vercel 部署（推荐）⭐
-
-**步骤：**
-
-1. **准备 GitHub 仓库**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/YOUR_USERNAME/chain-tools.git
-   git push -u origin main
-   ```
-
-2. **连接 Vercel**
-   - 访问 [vercel.com](https://vercel.com)
-   - 使用 GitHub 账号登录
-   - 点击 "Add New..." → "Project"
-   - 选择 `chain-tools` 仓库
-   - 点击 "Deploy"
-
-3. **配置自定义域名**
-   - 部署成功后，进入项目设置
-   - 点击 "Domains"
-   - 添加 `chain-tools.com`
-   - 按照提示配置 DNS
-
-**DNS 配置（在域名注册商）：**
-
-```
-类型: A
-名称: @
-值: 76.76.21.21
-
-类型: CNAME
-名称: www
-值: cname.vercel-dns.com
-```
-
-**优势：**
-- ✅ 自动 HTTPS
-- ✅ 全球 CDN
-- ✅ 自动部署（推送即部署）
-- ✅ 免费套餐足够使用
-
----
-
-### Netlify 部署
-
-**步骤：**
-
-1. 推送代码到 GitHub（同上）
-
-2. **连接 Netlify**
-   - 访问 [netlify.com](https://netlify.com)
-   - 点击 "New site from Git"
-   - 选择 GitHub 仓库
-   - 点击 "Deploy site"
-
-3. **配置域名**
-   - 在 Netlify 设置中添加自定义域名
-   - 配置 DNS
-
-**DNS 配置：**
-
-```
-类型: A
-名称: @
-值: 75.2.60.5
-
-类型: CNAME
-名称: www
-值: [your-site].netlify.app
-```
-
----
-
-### GitHub Pages 部署
-
-**步骤：**
-
-1. 推送代码到 GitHub
-
-2. **启用 GitHub Pages**
-   - 进入仓库设置 → Pages
-   - Source: Deploy from a branch
-   - Branch: main / root
-   - Save
-
-3. **配置自定义域名（可选）**
-   - 在 Pages 设置中添加域名
-   - 在仓库根目录创建 `CNAME` 文件，内容为你的域名
-
-**DNS 配置：**
-
-```
-类型: A
-名称: @
-值: 185.199.108.153
-值: 185.199.109.153
-值: 185.199.110.153
-值: 185.199.111.153
-
-类型: CNAME
-名称: www
-值: YOUR_USERNAME.github.io
+# 在浏览器中打开 index.html
 ```
 
 ---
