@@ -241,7 +241,7 @@ MIT License - 详见 [LICENSE](./LICENSE) 文件
 
 ## 👤 作者
 
-**0xFannie.eth**
+**0xfannie.eth**
 
 - GitHub: [@0xFannie](https://github.com/0xFannie)
 - Website: [chain-tools.com](https://chain-tools.com)
@@ -358,7 +358,7 @@ Chain Tools 诞生于一个简单的想法：**让区块链交互变得更简单
 
 <div align="center">
 
-**0xFannie.eth Made with ❤️ for Web3 Community**
+**0xfannie.eth Made with ❤️ for Web3 Community**
 
 [⬆ 回到顶部](#chain-tools---区块链工具集合)
 
