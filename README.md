@@ -244,7 +244,11 @@ MIT License - 详见 [LICENSE](./LICENSE) 文件
 **0xfannie.eth**
 
 - GitHub: [@0xFannie](https://github.com/0xFannie)
-- Website: [chain-tools.com](https://chain-tools.com)
+- Website: [xifangzhang.work](https://xifangzhang.work)
+- Public wallets:
+  0xfannie.eth (0x36C1ad1E9eB589E20fF739FAD024a7ff3113Ba27）
+  Catalizer.eth （0xF9147fb1c9799fA61bC9a41B28FFf2EE80654fd5）
+  fannie.sol （4SUKuF4jt2ya6No5okHGvk5tsezAZaf3bVHvCf1pNqrC）
 
 ---
 
