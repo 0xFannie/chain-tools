@@ -31,6 +31,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
         .glass-card {
             background: linear-gradient(135deg, rgba(19, 23, 42, 0.8) 0%, rgba(5, 9, 14, 0.9) 100%);
@@ -43,15 +44,140 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Animation Classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Initial hidden state */
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        /* Stagger delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
     </style>
 </head>
 <body class="bg-primary-black text-white min-h-screen">
     <!-- Background decorative elements -->
-    <div class="fixed top-0 left-0 w-96 h-96 bg-primary-light/5 rounded-full blur-3xl"></div>
-    <div class="fixed bottom-0 right-0 w-96 h-96 bg-primary-gray/10 rounded-full blur-3xl"></div>
+    <div class="fixed top-0 left-0 w-96 h-96 bg-primary-light/5 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="fixed bottom-0 right-0 w-96 h-96 bg-primary-gray/10 rounded-full blur-3xl animate-pulse-slow delay-500"></div>
 
     <!-- Header -->
-    <header class="relative z-10 container mx-auto px-4 py-8">
+    <header class="relative z-10 container mx-auto px-4 py-8 animate-fade-in-down">
         <nav class="flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-light to-primary-gray flex items-center justify-center">
@@ -72,17 +198,17 @@
     <!-- Hero Section -->
     <main class="relative z-10 container mx-auto px-4 py-16">
         <div class="text-center max-w-4xl mx-auto mb-20">
-            <h1 class="text-6xl md:text-7xl font-bold mb-6">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 animate-fade-in-up">
                 <span class="gradient-text">区块链工具集合</span>
             </h1>
-            <p class="text-xl md:text-2xl text-primary-gray mb-8">
+            <p class="text-xl md:text-2xl text-primary-gray mb-8 animate-fade-in-up delay-200">
                 专业、免费、开源的 Web3 开发和交互工具
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#tools" class="px-8 py-4 bg-gradient-to-r from-primary-light to-primary-gray text-primary-black rounded-2xl hover:shadow-2xl hover:shadow-primary-light/20 transition-all font-bold text-lg">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+                <a href="#tools" class="px-8 py-4 bg-gradient-to-r from-primary-light to-primary-gray text-primary-black rounded-2xl hover:shadow-2xl hover:shadow-primary-light/20 hover:scale-105 transition-all font-bold text-lg">
                     探索工具
                 </a>
-                <a href="https://github.com/0xFannie/multisig-deployer" target="_blank" class="px-8 py-4 bg-primary-gray/20 text-white rounded-2xl hover:bg-primary-gray/30 transition-all font-semibold text-lg border border-primary-gray/30">
+                <a href="https://github.com/0xFannie/chain-tools" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-primary-gray/20 text-white rounded-2xl hover:bg-primary-gray/30 hover:scale-105 transition-all font-semibold text-lg border border-primary-gray/30">
                     查看源码
                 </a>
             </div>
@@ -90,7 +216,7 @@
 
         <!-- Features -->
         <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20">
-            <div class="glass-card rounded-2xl p-8">
+            <div class="glass-card rounded-2xl p-8 hover-lift animate-on-scroll animate-scale-in delay-100">
                 <div class="w-14 h-14 rounded-xl bg-primary-light/20 flex items-center justify-center mb-4">
                     <svg class="w-8 h-8 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
@@ -100,7 +226,7 @@
                 <p class="text-primary-gray">所有工具经过严格测试，代码完全开源，可供审计</p>
             </div>
 
-            <div class="glass-card rounded-2xl p-8">
+            <div class="glass-card rounded-2xl p-8 hover-lift animate-on-scroll animate-scale-in delay-200">
                 <div class="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
                     <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -110,7 +236,7 @@
                 <p class="text-primary-gray">所有工具永久免费使用，无需注册或付费</p>
             </div>
 
-            <div class="glass-card rounded-2xl p-8">
+            <div class="glass-card rounded-2xl p-8 hover-lift animate-on-scroll animate-scale-in delay-300">
                 <div class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
                     <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -123,13 +249,13 @@
 
         <!-- Tools Section -->
         <div id="tools" class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4">
+            <h2 class="text-4xl font-bold text-center mb-4 animate-on-scroll animate-fade-in-up">
                 <span class="gradient-text">可用工具</span>
             </h2>
-            <p class="text-center text-primary-gray mb-12 text-lg">专业的区块链交互工具，助力您的 Web3 开发</p>
+            <p class="text-center text-primary-gray mb-12 text-lg animate-on-scroll animate-fade-in-up delay-100">专业的区块链交互工具，助力您的 Web3 开发</p>
 
             <!-- Tool Card: MultiSig Deployer -->
-            <div class="glass-card rounded-3xl p-8 md:p-10 hover:border-primary-light/40 transition-all">
+            <div class="glass-card rounded-3xl p-8 md:p-10 hover-lift hover:border-primary-light/40 transition-all animate-on-scroll animate-slide-in-left">
                 <div class="flex flex-col lg:flex-row gap-8">
                     <!-- Left: Info -->
                     <div class="flex-1">
@@ -273,7 +399,7 @@
             </div>
 
             <!-- Tool Card: Solana Private Key Recovery -->
-            <div class="mt-8 glass-card rounded-3xl p-8 md:p-10 hover:border-primary-light/40 transition-all">
+            <div class="mt-8 glass-card rounded-3xl p-8 md:p-10 hover-lift hover:border-primary-light/40 transition-all animate-on-scroll animate-slide-in-right">
                 <div class="flex flex-col lg:flex-row gap-8">
                     <!-- Left: Info -->
                     <div class="flex-1">
@@ -437,6 +563,38 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('animate-on-scroll');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(el => observer.observe(el));
+        });
+
+        // Add parallax effect to background elements
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            document.querySelectorAll('.fixed').forEach((el, index) => {
+                const speed = (index + 1) * 0.5;
+                el.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
             });
         });
     </script>
